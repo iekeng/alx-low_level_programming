@@ -10,7 +10,7 @@
 * @value: value to search for.
 *
 * Return: the index of the matching element in the array
-*		or -1 if the execution is unsuccessful.
+*or -1 if the execution is unsuccessful.
 **/
 
 int linear_search(int *array, size_t size, int value)
