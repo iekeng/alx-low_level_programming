@@ -2,10 +2,9 @@
 #include "search_algos.h"
 
 /**
- * binary_search - searches for a value in an array using the
+ * binary_search - searches for a value in an integer array using a
  * binary search algorithm
- *
- * @array: pointer to first element of the array
+ * @array: pointer to first element of array to seach
  * @size: the size of the array
  * @value: value to search for
  *
@@ -15,7 +14,7 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i, left = 0, right = size - 1, mid;
+	size_t mid, i, left = 0, right = size - 1;
 
 	if (!array)
 		return (-1);
@@ -34,18 +33,14 @@ int binary_search(int *array, size_t size, int value)
 		}
 		mid = (left + right) / 2;
 
-		if (array[mid] == value)
+		if (value == array[mid])
 		{
 			return (mid);
 		}
-		else if (array[mid] > value)
-		{
-			left = mid + 1;
-		}
-		else
-		{
+		else if (value < array[mid])
 			right = mid - 1;
-		}
+		else
+			left = mid + 1;
 	}
 	return (-1);
 }
